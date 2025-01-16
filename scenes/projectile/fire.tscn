@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://ch4numsr8jlca"]
+
+[ext_resource type="PackedScene" uid="uid://dsy35vj3omd40" path="res://scenes/projectile/projectile.tscn" id="1_qauep"]
+
+[node name="fire" instance=ExtResource("1_qauep")]
+bounces = 0
+damage = 75

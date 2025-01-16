@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://cxvgvi27r5pwr"]
+
+[ext_resource type="Script" path="res://scenes/area/power_up.gd" id="1_vc5ua"]
+[ext_resource type="Texture2D" uid="uid://cqpq2ta66ts47" path="res://Assets/Spritess/fireball.png" id="2_3vkxy"]
+[ext_resource type="Texture2D" uid="uid://bue10tlfheu72" path="res://Assets/Spritess/slash.png" id="3_n6rni"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kic8d"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ajxs1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_3vkxy")
+}],
+"loop": true,
+"name": &"fire",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_n6rni")
+}],
+"loop": true,
+"name": &"laser",
+"speed": 5.0
+}]
+
+[node name="powerUp" type="Area2D"]
+script = ExtResource("1_vc5ua")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_kic8d")
+debug_color = Color(0.498128, 0.429201, 1, 0.42)
+
+[node name="spriteAnchor" type="Node2D" parent="."]
+
+[node name="sprite" type="AnimatedSprite2D" parent="spriteAnchor"]
+position = Vector2(1, 4)
+scale = Vector2(0.0410959, 0.0410959)
+sprite_frames = SubResource("SpriteFrames_ajxs1")
+animation = &"laser"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

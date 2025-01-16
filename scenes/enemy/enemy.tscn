@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://dn0bo05vkojpv"]
+
+[ext_resource type="Script" path="res://scenes/enemy/enemy.gd" id="1_xcils"]
+[ext_resource type="Texture2D" uid="uid://yh1mgmql84h8" path="res://Assets/Spritess/woodworker/lenhador_parado.png" id="2_l1cw7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_muf5d"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0ok64"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_l1cw7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="enemy" type="CharacterBody2D" groups=["enemy"]]
+collision_layer = 3
+script = ExtResource("1_xcils")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_muf5d")
+debug_color = Color(0, 0.649989, 0.118177, 0.42)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+sprite_frames = SubResource("SpriteFrames_0ok64")

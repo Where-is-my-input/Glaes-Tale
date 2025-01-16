@@ -5,7 +5,7 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fev5v"]
 
-[node name="player" type="CharacterBody2D"]
+[node name="player" type="CharacterBody2D" groups=["player"]]
 motion_mode = 1
 script = ExtResource("1_wee65")
 
@@ -15,3 +15,8 @@ shape = SubResource("RectangleShape2D_fev5v")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.0445344, 0.0445345)
 texture = ExtResource("2_i1lsx")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="bpm" type="Timer" parent="."]
+one_shot = true

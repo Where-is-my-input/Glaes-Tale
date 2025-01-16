@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bfv22iy8okoxr"]
+
+[ext_resource type="PackedScene" uid="uid://dsy35vj3omd40" path="res://scenes/projectile/projectile.tscn" id="1_ejnc5"]
+
+[node name="laser2" instance=ExtResource("1_ejnc5")]
+speed = 3000.0
+bounces = 5
+damage = 35

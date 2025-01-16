@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=4 uid="uid://ctf1eri52cxge"]
+
+[ext_resource type="PackedScene" uid="uid://dvas3uigxa1nr" path="res://scenes/tile.tscn" id="1_ecr7s"]
+[ext_resource type="PackedScene" uid="uid://dw2q1l7hqx5mg" path="res://scenes/player/player.tscn" id="2_djb7f"]
+[ext_resource type="PackedScene" uid="uid://cxvgvi27r5pwr" path="res://scenes/area/power_up.tscn" id="3_d3xsf"]
+[ext_resource type="PackedScene" uid="uid://dn0bo05vkojpv" path="res://scenes/enemy/enemy.tscn" id="4_xa3yh"]
+
+[node name="main" type="Node2D"]
+
+[node name="tile" parent="." instance=ExtResource("1_ecr7s")]
+z_index = -15
+tile_map_data = PackedByteArray("AAD8//z/AAAAAAAAAAD8//3/AAAAAAAAAAD8//7/AAAAAAAAAAD8////AAAAAAAAAAD8/wAAAAAAAAAAAAD8/wEAAAAAAAAAAAD8/wIAAAAAAAAAAAD8/wMAAAAAAAAAAAD9//z/AAAAAAAAAAD9//3/AAABAAAAAAD9//7/AAABAAAAAAD9////AAABAAAAAAD9/wAAAAABAAAAAAD9/wEAAAABAAAAAAD9/wIAAAABAAAAAAD9/wMAAAAAAAAAAAD+//z/AAAAAAAAAAD+//3/AAABAAAAAAD+//7/AAABAAAAAAD+////AAABAAAAAAD+/wAAAAABAAAAAAD+/wEAAAABAAAAAAD+/wIAAAABAAAAAAD+/wMAAAAAAAAAAAD///z/AAAAAAAAAAD///3/AAABAAAAAAD///7/AAABAAAAAAD/////AAABAAAAAAD//wAAAAABAAAAAAD//wEAAAABAAAAAAD//wIAAAABAAAAAAD//wMAAAAAAAAAAAAAAPz/AAAAAAAAAAAAAP3/AAABAAAAAAAAAP7/AAABAAAAAAAAAP//AAABAAAAAAAAAAAAAAABAAAAAAAAAAEAAAABAAAAAAAAAAIAAAABAAAAAAAAAAMAAAAAAAAAAAABAPz/AAAAAAAAAAABAP3/AAABAAAAAAABAP7/AAABAAAAAAABAP//AAABAAAAAAABAAAAAAABAAAAAAABAAEAAAABAAAAAAABAAIAAAABAAAAAAABAAMAAAAAAAAAAAACAPz/AAAAAAAAAAACAP3/AAABAAAAAAACAP7/AAABAAAAAAACAP//AAABAAAAAAACAAAAAAABAAAAAAACAAEAAAABAAAAAAACAAIAAAABAAAAAAACAAMAAAAAAAAAAAADAPz/AAAAAAAAAAADAP3/AAAAAAAAAAADAP7/AAAAAAAAAAADAP//AAAAAAAAAAADAAAAAAAAAAAAAAADAAEAAAAAAAAAAAADAAIAAAAAAAAAAAADAAMAAAAAAAAAAAA=")
+
+[node name="player" parent="." instance=ExtResource("2_djb7f")]
+
+[node name="powerUp" parent="." instance=ExtResource("3_d3xsf")]
+position = Vector2(-128, -132)
+
+[node name="powerUp2" parent="." instance=ExtResource("3_d3xsf")]
+position = Vector2(119, -132)
+
+[node name="powerUp3" parent="." instance=ExtResource("3_d3xsf")]
+position = Vector2(-111, 119)
+ammoType = 2
+
+[node name="powerUp4" parent="." instance=ExtResource("3_d3xsf")]
+position = Vector2(125, 136)
+ammoType = 2
+
+[node name="enemy" parent="." instance=ExtResource("4_xa3yh")]
+position = Vector2(-144, 37)
