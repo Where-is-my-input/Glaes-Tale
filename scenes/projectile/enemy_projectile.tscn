@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bdew8gigjhmom"]
+
+[ext_resource type="PackedScene" uid="uid://dsy35vj3omd40" path="res://scenes/projectile/projectile.tscn" id="1_6pequ"]
+
+[node name="enemyProjectile" instance=ExtResource("1_6pequ")]
+collision_layer = 1
+collision_mask = 1

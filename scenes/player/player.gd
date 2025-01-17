@@ -4,6 +4,8 @@ const FIRE = preload("res://scenes/projectile/fire.tscn")
 const LASER_2 = preload("res://scenes/projectile/laser_2.tscn")
 const FIRE_2 = preload("res://scenes/projectile/fire_2.tscn")
 @onready var bpm: Timer = $bpm
+@onready var sprite: AnimatedSprite2D = $CanvasLayer/sprite
+@onready var sprite_2: AnimatedSprite2D = $CanvasLayer/sprite2
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
@@ -12,6 +14,8 @@ const JUMP_VELOCITY = -400.0
 
 @export var ammo1:Global.eAmmo = 0
 @export var ammo2:Global.eAmmo = 0
+
+var hp:int = 25
 
 var aim:Vector2 = Vector2(1, 0)
 var ammoChange:int = 1
@@ -50,8 +54,10 @@ func fire():
 func getAmmo(ammo:Global.eAmmo = Global.eAmmo.FIRE):
 	var removedAmmo = Global.eAmmo.NONE
 	if ammo1 == Global.eAmmo.NONE:
+		sprite.visible = true
 		ammo1 = ammo
 	elif ammo2 == Global.eAmmo.NONE:
+		sprite_2.visible = true
 		ammo2 = ammo
 	else:
 		if ammoChange == 1:
@@ -63,7 +69,16 @@ func getAmmo(ammo:Global.eAmmo = Global.eAmmo.FIRE):
 			ammo2 = ammo
 			ammoChange -=1
 	setFireRate()
+	setAmmoSelectedHUD(ammo1, sprite)
+	setAmmoSelectedHUD(ammo2, sprite_2)
 	return removedAmmo
+
+func setAmmoSelectedHUD(ammo, spr):
+	match ammo:
+		Global.eAmmo.FIRE:
+			spr.play("fire")
+		Global.eAmmo.LASER:
+			spr.play("laser")
 
 func setFireRate():
 	if ammo1 == Global.eAmmo.LASER && ammo2 == 0 || ammo2 == Global.eAmmo.LASER && ammo1 == 0:
@@ -76,4 +91,9 @@ func setFireRate():
 		fireRate = 0.20
 	if ammo1 == Global.eAmmo.FIRE && ammo2 == Global.eAmmo.LASER || ammo2 == Global.eAmmo.FIRE && ammo1 == Global.eAmmo.LASER:
 		fireRate = 0.30
+	
+func getHit(damage = 1):
+	hp -= damage
+	if hp <= 0:
+		queue_free()
 	

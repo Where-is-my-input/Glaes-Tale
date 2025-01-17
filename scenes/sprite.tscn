@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://c7ix5qh6kb7ui"]
+
+[ext_resource type="Texture2D" uid="uid://cqpq2ta66ts47" path="res://Assets/Spritess/fireball.png" id="1_46yna"]
+[ext_resource type="Texture2D" uid="uid://bue10tlfheu72" path="res://Assets/Spritess/slash.png" id="2_1qtm0"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ajxs1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_46yna")
+}],
+"loop": true,
+"name": &"fire",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_1qtm0")
+}],
+"loop": true,
+"name": &"laser",
+"speed": 5.0
+}]
+
+[node name="sprite" type="AnimatedSprite2D"]
+position = Vector2(1, 4)
+scale = Vector2(0.0410959, 0.0410959)
+sprite_frames = SubResource("SpriteFrames_ajxs1")
+animation = &"laser"
