@@ -15,5 +15,8 @@ debug_color = Color(0.498128, 0.429201, 1, 0.42)
 [node name="spriteAnchor" type="Node2D" parent="."]
 
 [node name="sprite" parent="spriteAnchor" instance=ExtResource("2_c2kky")]
+position = Vector2(0, 0)
+scale = Vector2(0.081, 0.081)
+animation = &"laser"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

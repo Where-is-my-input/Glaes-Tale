@@ -9,4 +9,5 @@ bounces = 5
 damage = 35
 
 [node name="spr" parent="." index="1"]
+scale = Vector2(0.0760454, 0.0760456)
 texture = ExtResource("2_tql2a")
