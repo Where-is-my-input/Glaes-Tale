@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=4 uid="uid://dvk1acga3absm"]
+[gd_scene load_steps=7 format=4 uid="uid://dvk1acga3absm"]
 
 [ext_resource type="PackedScene" uid="uid://dvas3uigxa1nr" path="res://scenes/tile.tscn" id="1_f0tjx"]
 [ext_resource type="PackedScene" uid="uid://dw2q1l7hqx5mg" path="res://scenes/player/player.tscn" id="2_800qv"]
 [ext_resource type="PackedScene" uid="uid://cxvgvi27r5pwr" path="res://scenes/area/power_up.tscn" id="3_01k35"]
 [ext_resource type="PackedScene" uid="uid://cwgdrk3u8kdgr" path="res://scenes/spawner.tscn" id="4_lfkqh"]
 [ext_resource type="PackedScene" uid="uid://cmed6r7xapnjv" path="res://scenes/main_hud.tscn" id="5_alehd"]
+[ext_resource type="PackedScene" uid="uid://n0dw1jd6ndwr" path="res://scenes/stagess/end_stage.tscn" id="6_yegsa"]
 
 [node name="stage_1" type="Node2D"]
 
@@ -70,6 +71,10 @@ position = Vector2(632, 1600)
 
 [node name="mainHUD" parent="." node_paths=PackedStringArray("player") instance=ExtResource("5_alehd")]
 player = NodePath("../player")
+
+[node name="endStage" parent="." instance=ExtResource("6_yegsa")]
+position = Vector2(5496, 1624)
+scale = Vector2(1, 2.47143)
 
 [editable path="spawner"]
 [editable path="spawner3"]

@@ -1,13 +1,13 @@
 [gd_scene load_steps=4 format=3 uid="uid://c7ix5qh6kb7ui"]
 
-[ext_resource type="Texture2D" uid="uid://cqpq2ta66ts47" path="res://Assets/Spritess/fireball.png" id="1_46yna"]
-[ext_resource type="Texture2D" uid="uid://bue10tlfheu72" path="res://Assets/Spritess/slash.png" id="2_1qtm0"]
+[ext_resource type="Texture2D" uid="uid://f3aqc65j5nvo" path="res://Assets/Spritess/bullets/fire1.png" id="1_krsm5"]
+[ext_resource type="Texture2D" uid="uid://dkp0synb63rq4" path="res://Assets/Spritess/bullets/laser1.png" id="2_kbixj"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ajxs1"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_46yna")
+"texture": ExtResource("1_krsm5")
 }],
 "loop": true,
 "name": &"fire",
@@ -15,7 +15,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_1qtm0")
+"texture": ExtResource("2_kbixj")
 }],
 "loop": true,
 "name": &"laser",
@@ -26,4 +26,4 @@ animations = [{
 position = Vector2(1, 4)
 scale = Vector2(0.0410959, 0.0410959)
 sprite_frames = SubResource("SpriteFrames_ajxs1")
-animation = &"laser"
+animation = &"fire"

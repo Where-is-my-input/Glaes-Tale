@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://doxex0ym28yx6"]
+
+[ext_resource type="Texture2D" uid="uid://bio4egsluvfrm" path="res://Assets/Spritess/mars.png" id="1_yshd4"]
+[ext_resource type="Script" path="res://scenes/stagess/end.gd" id="2_aobnm"]
+[ext_resource type="PackedScene" uid="uid://ciawb2hlsxw1" path="res://scenes/in_game_timer/igt_canvas.tscn" id="3_atqgi"]
+
+[node name="end" type="TextureRect"]
+z_index = -50
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.605424, 0.604828)
+texture = ExtResource("1_yshd4")
+script = ExtResource("2_aobnm")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+autostart = true
+
+[node name="igt_canvas" parent="." instance=ExtResource("3_atqgi")]
+script = null

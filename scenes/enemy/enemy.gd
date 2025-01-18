@@ -22,7 +22,8 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity = Vector2(move_toward(velocity.x, 0, SPEED), move_toward(velocity.y, 0, SPEED))
 
-	move_and_slide()
+	if move_and_slide():
+		direction *= Vector2(-1, -1)
 
 func getHit(damage = 5):
 	hp -= damage

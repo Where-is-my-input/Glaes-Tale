@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://baynipf3s20my"]
+
+[ext_resource type="Texture2D" uid="uid://diy1t1e3mn2y1" path="res://Assets/Spritess/pipes.png" id="1_uhwpr"]
+
+[node name="pipe" type="Sprite2D"]
+rotation = 0.0346264
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_uhwpr")

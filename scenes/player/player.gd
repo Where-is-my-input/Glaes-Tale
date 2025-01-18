@@ -17,11 +17,22 @@ const JUMP_VELOCITY = -400.0
 @export var ammo1:Global.eAmmo = 0
 @export var ammo2:Global.eAmmo = 0
 
+@export var form:int = 0
+
 var maxHp:int = 250
 var hp:int = 250
 
 var aim:Vector2 = Vector2(1, 0)
 var ammoChange:int = 1
+
+func _ready() -> void:
+	if Global.ammo1 != Global.eAmmo.NONE: getAmmo(Global.ammo1)
+	if Global.ammo2 != Global.eAmmo.NONE: getAmmo(Global.ammo2)
+	match form:
+		1:
+			sprite_2d.play("human")
+		2:
+			sprite_2d.play("butterfly")
 
 func _physics_process(delta: float) -> void:
 	
@@ -31,7 +42,7 @@ func _physics_process(delta: float) -> void:
 	var direction := Vector2(Input.get_axis("ui_left", "ui_right"), Input.get_axis("ui_up", "ui_down"))
 	if direction:
 		velocity = direction * SPEED
-	else:
+	elif form != 2:
 		velocity = Vector2(move_toward(velocity.x, 0, SPEED), move_toward(velocity.y, 0, SPEED))
 
 	if Input.is_action_pressed("fire") && ammo1 + ammo2 > 0 && bpm.is_stopped():
@@ -100,5 +111,5 @@ func getHit(damage = 1):
 	Global.playerHit.emit(damage)
 	hp -= damage
 	if hp <= 0:
-		queue_free()
+		get_tree().change_scene_to_file("res://scenes/splash_screen/splash_screen.tscn")
 	

@@ -9,6 +9,8 @@ func _ready() -> void:
 	btnPlay.grab_focus()
 
 func _on_play_pressed() -> void:
+	InGameTimer.paused = false
+	InGameTimer.resetIGT()
 	get_tree().change_scene_to_packed(play)
 
 func _on_options_pressed() -> void:

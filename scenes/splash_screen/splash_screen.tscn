@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://c4t2agbwrsi2l"]
+[gd_scene load_steps=8 format=3 uid="uid://c4t2agbwrsi2l"]
 
-[ext_resource type="Script" path="res://control/splash_screen/splash_screen.gd" id="1_puv4v"]
-[ext_resource type="Texture2D" uid="uid://bxu3pwqfvsrl0" path="res://assets/godot/logo_vertical_color_dark.svg" id="2_a2kjq"]
-[ext_resource type="Texture2D" uid="uid://do0t45wbfy8i3" path="res://wimiProductions.png" id="3_jc6l6"]
+[ext_resource type="Script" path="res://scenes/splash_screen/splash_screen.gd" id="1_puv4v"]
+[ext_resource type="Texture2D" uid="uid://bt8eusbkdyprq" path="res://Assets/logo_vertical_color_dark.svg" id="2_a2kjq"]
+[ext_resource type="PackedScene" uid="uid://cs87sly5qy386" path="res://scenes/main_menu/main_menu.tscn" id="2_a5wmu"]
+[ext_resource type="Texture2D" uid="uid://bcofdfaa8ixpf" path="res://Assets/wimiProductions.png" id="3_jc6l6"]
 
 [sub_resource type="Animation" id="Animation_cisei"]
 length = 0.001
@@ -74,6 +75,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_puv4v")
+nextScene = ExtResource("2_a5wmu")
 
 [node name="godot" type="TextureRect" parent="."]
 modulate = Color(1, 1, 1, 0)
