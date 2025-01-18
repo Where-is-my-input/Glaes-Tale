@@ -15,7 +15,8 @@ const JUMP_VELOCITY = -400.0
 @export var ammo1:Global.eAmmo = 0
 @export var ammo2:Global.eAmmo = 0
 
-var hp:int = 25
+var maxHp:int = 250
+var hp:int = 250
 
 var aim:Vector2 = Vector2(1, 0)
 var ammoChange:int = 1
@@ -93,6 +94,7 @@ func setFireRate():
 		fireRate = 0.30
 	
 func getHit(damage = 1):
+	Global.playerHit.emit(damage)
 	hp -= damage
 	if hp <= 0:
 		queue_free()

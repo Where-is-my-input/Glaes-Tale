@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cwgdrk3u8kdgr"]
+
+[ext_resource type="Script" path="res://scenes/spawner.gd" id="1_4ovhw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e5r5g"]
+size = Vector2(256, 384)
+
+[node name="spawner" type="Area2D"]
+script = ExtResource("1_4ovhw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_e5r5g")
+debug_color = Color(0.526808, 0.553955, 0.408624, 0.42)
+
+[node name="spawnpoints" type="Node" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

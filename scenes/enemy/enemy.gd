@@ -4,7 +4,8 @@ const PROJECTILE = preload("res://scenes/projectile/enemy_projectile.tscn")
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
-@export var hp:int = 500
+@export var maxHp:int = 250
+@export var hp:int = 150
 @export var direction:Vector2 = Vector2(0, 0)
 @export var fireRate:float = 1.256
 @export var player:CharacterBody2D = null
@@ -16,7 +17,6 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	aim = global_position.direction_to(player.global_position) + Vector2(randf_range(-0.15, 0.15), randf_range(-0.15, 0.15)) if player != null else aim
-	print(global_position.direction_to(player.global_position))
 	if direction:
 		velocity = direction * SPEED
 	else:
@@ -26,6 +26,7 @@ func _physics_process(delta: float) -> void:
 
 func getHit(damage = 5):
 	hp -= damage
+	Global.enemyHit.emit(maxHp, hp)
 	if hp <= 0:
 		queue_free()
 

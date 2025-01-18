@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://be10xwiquygqo"]
+
+[ext_resource type="Script" path="res://scenes/enemy_bar.gd" id="1_5u4rf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cs0o1"]
+bg_color = Color(0.872401, 0, 0.292047, 1)
+
+[sub_resource type="Theme" id="Theme_8l6es"]
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_cs0o1")
+
+[node name="enemyBar" type="ProgressBar"]
+custom_minimum_size = Vector2(250, 25)
+theme = SubResource("Theme_8l6es")
+value = 50.0
+show_percentage = false
+script = ExtResource("1_5u4rf")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

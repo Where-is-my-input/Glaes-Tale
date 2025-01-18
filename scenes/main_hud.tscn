@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://cmed6r7xapnjv"]
+
+[ext_resource type="Script" path="res://scenes/main_hud.gd" id="1_p5ujv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gn64u"]
+bg_color = Color(4.81307e-07, 0.725298, 0.20572, 1)
+
+[sub_resource type="Theme" id="Theme_v71ob"]
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_gn64u")
+
+[node name="mainHUD" type="CanvasLayer"]
+script = ExtResource("1_p5ujv")
+
+[node name="playerBar" type="ProgressBar" parent="."]
+offset_left = 16.0
+offset_top = 24.0
+offset_right = 352.0
+offset_bottom = 56.0
+theme = SubResource("Theme_v71ob")
+value = 50.0
+show_percentage = false
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_top = 600.0
+offset_right = 1152.0
+offset_bottom = 640.0
