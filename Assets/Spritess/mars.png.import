@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dqmtrl0fy7wls"
-path="res://.godot/imported/lenhador_walk_2.png-97d12ed93c8a47f3dcb7b592bc2907c3.ctex"
+uid="uid://bio4egsluvfrm"
+path="res://.godot/imported/mars.png-46c3a02b3b4e7a6fae19e143ec78aa65.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Spritess/woodworker/lenhador_walk_2.png"
-dest_files=["res://.godot/imported/lenhador_walk_2.png-97d12ed93c8a47f3dcb7b592bc2907c3.ctex"]
+source_file="res://Assets/Spritess/mars.png"
+dest_files=["res://.godot/imported/mars.png-46c3a02b3b4e7a6fae19e143ec78aa65.ctex"]
 
 [params]
 

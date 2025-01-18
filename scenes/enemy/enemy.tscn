@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dn0bo05vkojpv"]
 
 [ext_resource type="Script" path="res://scenes/enemy/enemy.gd" id="1_xcils"]
-[ext_resource type="Texture2D" uid="uid://yh1mgmql84h8" path="res://Assets/Spritess/woodworker/lenhador_parado.png" id="2_l1cw7"]
+[ext_resource type="Texture2D" uid="uid://ckrffrbblyesl" path="res://Assets/Spritess/bot.png" id="2_ruij2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_muf5d"]
 
@@ -9,7 +9,7 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_l1cw7")
+"texture": ExtResource("2_ruij2")
 }],
 "loop": true,
 "name": &"default",

@@ -1,9 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://bsf46281mfuv8"]
+[gd_scene load_steps=3 format=3 uid="uid://bsf46281mfuv8"]
 
 [ext_resource type="PackedScene" uid="uid://dsy35vj3omd40" path="res://scenes/projectile/projectile.tscn" id="1_0cy3p"]
+[ext_resource type="Texture2D" uid="uid://cfj3hiwxqtl4g" path="res://Assets/Spritess/bullets/fire2.png" id="2_sle42"]
 
 [node name="fire2" instance=ExtResource("1_0cy3p")]
 scale = Vector2(1.5, 1.5)
 speed = 1750.0
 bounces = 0
 damage = 150
+
+[node name="spr" parent="." index="1"]
+texture = ExtResource("2_sle42")

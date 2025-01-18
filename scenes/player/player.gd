@@ -3,9 +3,11 @@ const PROJECTILE = preload("res://scenes/projectile/projectile.tscn")
 const FIRE = preload("res://scenes/projectile/fire.tscn")
 const LASER_2 = preload("res://scenes/projectile/laser_2.tscn")
 const FIRE_2 = preload("res://scenes/projectile/fire_2.tscn")
+const FIRE_LASER = preload("res://scenes/projectile/fire_laser.tscn")
 @onready var bpm: Timer = $bpm
 @onready var sprite: AnimatedSprite2D = $CanvasLayer/sprite
 @onready var sprite_2: AnimatedSprite2D = $CanvasLayer/sprite2
+@onready var sprite_2d: AnimatedSprite2D = $spr
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
@@ -24,6 +26,7 @@ var ammoChange:int = 1
 func _physics_process(delta: float) -> void:
 	
 	aim = global_position.direction_to(get_global_mouse_position())
+	sprite_2d.look_at(get_global_mouse_position())
 	
 	var direction := Vector2(Input.get_axis("ui_left", "ui_right"), Input.get_axis("ui_up", "ui_down"))
 	if direction:
@@ -47,7 +50,7 @@ func fire():
 	if ammo1 == Global.eAmmo.LASER && ammo2 == Global.eAmmo.LASER:
 		bullet = LASER_2.instantiate()
 	if ammo1 == Global.eAmmo.FIRE && ammo2 == Global.eAmmo.LASER || ammo2 == Global.eAmmo.FIRE && ammo1 == Global.eAmmo.LASER:
-		bullet = PROJECTILE.instantiate()
+		bullet = FIRE_LASER.instantiate()
 	add_sibling(bullet)
 	bullet.setValues(self)
 	bpm.start(fireRate)

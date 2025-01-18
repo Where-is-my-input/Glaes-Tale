@@ -1,10 +1,39 @@
-[gd_scene load_steps=5 format=3 uid="uid://dw2q1l7hqx5mg"]
+[gd_scene load_steps=8 format=3 uid="uid://dw2q1l7hqx5mg"]
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_wee65"]
-[ext_resource type="Texture2D" uid="uid://bcofdfaa8ixpf" path="res://Assets/wimiProductions.png" id="2_i1lsx"]
+[ext_resource type="Texture2D" uid="uid://cva3rlgc2mfv6" path="res://Assets/Spritess/player/girino_2.png" id="2_w8byv"]
+[ext_resource type="Texture2D" uid="uid://6kab7k05hjjy" path="res://Assets/Spritess/player/butterfly.png" id="2_x72he"]
 [ext_resource type="PackedScene" uid="uid://c7ix5qh6kb7ui" path="res://scenes/sprite.tscn" id="3_kjj0r"]
+[ext_resource type="Texture2D" uid="uid://cjknxku4637l7" path="res://Assets/Spritess/player/human.png" id="4_g7bxj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fev5v"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ijkfj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_x72he")
+}],
+"loop": true,
+"name": &"butterfly",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_w8byv")
+}],
+"loop": true,
+"name": &"girino",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_g7bxj")
+}],
+"loop": true,
+"name": &"human",
+"speed": 5.0
+}]
 
 [node name="player" type="CharacterBody2D" groups=["player"]]
 motion_mode = 1
@@ -13,9 +42,10 @@ script = ExtResource("1_wee65")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_fev5v")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.0445344, 0.0445345)
-texture = ExtResource("2_i1lsx")
+[node name="spr" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
+sprite_frames = SubResource("SpriteFrames_ijkfj")
+animation = &"girino"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
@@ -24,10 +54,22 @@ one_shot = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+offset_left = 8.0
+offset_top = 64.0
+offset_right = 40.0
+offset_bottom = 96.0
+
+[node name="Panel2" type="Panel" parent="CanvasLayer"]
+offset_left = 48.0
+offset_top = 64.0
+offset_right = 80.0
+offset_bottom = 96.0
+
 [node name="sprite" parent="CanvasLayer" instance=ExtResource("3_kjj0r")]
 visible = false
-position = Vector2(16, 16)
+position = Vector2(24, 80)
 
 [node name="sprite2" parent="CanvasLayer" instance=ExtResource("3_kjj0r")]
 visible = false
-position = Vector2(48, 16)
+position = Vector2(64, 80)

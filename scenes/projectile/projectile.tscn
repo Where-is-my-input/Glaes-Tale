@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dsy35vj3omd40"]
 
 [ext_resource type="Script" path="res://scenes/projectile/projectile.gd" id="1_x1nt4"]
-[ext_resource type="Texture2D" uid="uid://bcofdfaa8ixpf" path="res://Assets/wimiProductions.png" id="2_1u3sc"]
+[ext_resource type="Texture2D" uid="uid://dkp0synb63rq4" path="res://Assets/Spritess/bullets/laser1.png" id="2_et4ex"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xojqs"]
 
@@ -17,4 +17,4 @@ debug_color = Color(0.988403, 0, 0.302384, 0.42)
 
 [node name="spr" type="Sprite2D" parent="."]
 scale = Vector2(0.0445344, 0.0445345)
-texture = ExtResource("2_1u3sc")
+texture = ExtResource("2_et4ex")

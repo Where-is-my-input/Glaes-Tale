@@ -16,17 +16,21 @@ tile_map_data = PackedByteArray("AAD8//z/AAAAAAAAAAD8//3/AAAAAAAAAAD8//7/AAAAAAA
 
 [node name="powerUp" parent="." instance=ExtResource("3_d3xsf")]
 position = Vector2(-128, -132)
+random = false
 
 [node name="powerUp2" parent="." instance=ExtResource("3_d3xsf")]
 position = Vector2(119, -132)
+random = false
 
 [node name="powerUp3" parent="." instance=ExtResource("3_d3xsf")]
 position = Vector2(-111, 119)
 ammoType = 2
+random = false
 
 [node name="powerUp4" parent="." instance=ExtResource("3_d3xsf")]
 position = Vector2(125, 136)
 ammoType = 2
+random = false
 
 [node name="enemy" parent="." node_paths=PackedStringArray("player") instance=ExtResource("4_xa3yh")]
 position = Vector2(-144, 37)

@@ -17,6 +17,9 @@ position = Vector2(160, 192)
 [node name="powerUp" parent="." instance=ExtResource("3_01k35")]
 position = Vector2(1024, 192)
 
+[node name="powerUp2" parent="." instance=ExtResource("3_01k35")]
+position = Vector2(1032, 1632)
+
 [node name="spawner" parent="." instance=ExtResource("4_lfkqh")]
 position = Vector2(1600, 424)
 
